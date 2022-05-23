@@ -1,0 +1,14 @@
+<div class="tweet-list-container">
+  <app-tweet
+    *ngFor="let tweet of tweets!.slice(0, max); trackBy: trackByFn"
+    [tweet]="tweet"
+    (tweetUpdated)="handleTweetUpdated($event)"
+  ></app-tweet>
+  <button
+    type="button"
+    (click)="onLoadMore()"
+    [disabled]="max >= tweets!.length"
+  >
+    Load more
+  </button>
+</div>

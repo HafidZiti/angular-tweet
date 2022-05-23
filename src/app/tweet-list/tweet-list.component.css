@@ -1,0 +1,24 @@
+.tweet-list-container {
+  margin-top: 50px;
+}
+
+button {
+  margin-top: 10px;
+  width: 100px;
+  height: 30px;
+  align-self: flex-end;
+  background-color: black;
+  border: black;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
