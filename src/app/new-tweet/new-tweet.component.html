@@ -1,0 +1,12 @@
+<div class="new-tweet-container">
+  <textarea
+    name="tweet"
+    id=""
+    rows="6"
+    placeholder="What's happening?"
+    [maxlength]="MAX_CHAR"
+    [formControl]="tweetContentControl"
+  ></textarea>
+  <!-- <span>max: 140char</span> -->
+  <button type="button" (click)="saveTweet()">Tweet</button>
+</div>
