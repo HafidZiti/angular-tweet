@@ -1,0 +1,14 @@
+<div class="tweet-container">
+  <p class="tweet-body">{{ tweet?.content }}</p>
+  <div class="tweet-footer">
+    <div class="tweet-likes">
+      <button (click)="handleLike()">
+        {{ alreadyLiked ? 'Unlike' : 'Like' }}
+      </button>
+      <span>{{ tweet?.likes! | likes }}</span>
+    </div>
+    <div class="tweet-date">
+      {{ tweet?.datetime | date: 'MMM d, y, h:mm a' }}
+    </div>
+  </div>
+</div>
