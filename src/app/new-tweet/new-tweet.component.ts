@@ -1,4 +1,3 @@
-import { Tweet } from './../model/tweet';
 import {
   Component,
   Output,
@@ -6,6 +5,8 @@ import {
   ChangeDetectionStrategy
 } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { v4 as uuidv4 } from 'uuid';
+import { Tweet } from './../model/tweet';
 
 @Component({
   selector: 'app-new-tweet',
@@ -32,11 +33,12 @@ export class NewTweetComponent {
     }
 
     const newTweet: Tweet = {
-      id: '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d', // fixme: will be changed by uuid lib
+      id: uuidv4(), // fixme: will be changed by uuid lib
       datetime: new Date().toString(),
       content: tweetContent,
       likes: 0
     };
+
     this.newTweetCreated.emit(newTweet);
     this.tweetContentControl.setValue('');
   }
