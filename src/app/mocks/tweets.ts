@@ -1,6 +1,6 @@
 import { Tweet } from './../model/tweet';
 
-// This tweets are generated using https://json-generator.com/
+// These tweets are generated using https://json-generator.com/
 
 export const mockTweets: Tweet[] = [
   {
