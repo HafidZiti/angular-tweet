@@ -1,6 +1,9 @@
-import { Tweet } from './model/tweet';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { mockTweets } from './mocks/tweets';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import * as TweetActions from './actions/tweet.actions';
+import { Tweet } from './model/tweet';
+import { AppState } from './model/app-state';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +13,14 @@ import { mockTweets } from './mocks/tweets';
 })
 export class AppComponent {
   title = 'Twitter-Like';
-  tweets: Tweet[] = mockTweets;
 
-  constructor() {}
+  tweets$: Observable<AppState>;
+
+  constructor(private store: Store<{ tweets: AppState }>) {
+    this.tweets$ = this.store.select('tweets');
+  }
 
   handleNewTweet(tweet: Tweet): void {
-    this.tweets = [tweet, ...this.tweets];
+    this.store.dispatch(TweetActions.addTweet({ tweet }));
   }
 }
