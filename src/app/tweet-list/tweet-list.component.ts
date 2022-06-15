@@ -1,12 +1,10 @@
-import {
-  Component,
-  OnInit,
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Input
-} from '@angular/core';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { editTweet, loadMore } from './../actions/tweet.actions';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { UpdatedTweet } from './../model/updated-tweet';
 import { Tweet } from '../model/tweet';
+import { AppState } from '../model/app-state';
 
 @Component({
   selector: 'app-tweet-list',
@@ -15,20 +13,12 @@ import { Tweet } from '../model/tweet';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TweetListComponent {
-  // max of tweets we display each time the user clicks 'load mode'
-  max = 10;
-
   @Input() tweets?: Tweet[];
 
-  constructor(private readonly cd: ChangeDetectorRef) {}
+  constructor(private store: Store<{ tweets: AppState }>) {}
 
   handleTweetUpdated(updatedTweet: UpdatedTweet): void {
-    this.tweets = this.tweets!.map((tweet: Tweet) => {
-      if (tweet.id === updatedTweet.id)
-        return { ...tweet, likes: updatedTweet.likes };
-      else return tweet;
-    });
-    this.cd.markForCheck();
+    this.store.dispatch(editTweet({ updatedTweet }));
   }
 
   trackByFn(index: number): number {
@@ -36,6 +26,6 @@ export class TweetListComponent {
   }
 
   onLoadMore(): void {
-    this.max = this.max + 10;
+    this.store.dispatch(loadMore({ offset: this.tweets!.length || 0 }));
   }
 }

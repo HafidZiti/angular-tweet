@@ -3,7 +3,6 @@ import {
   Component,
   Input,
   Output,
-  OnInit,
   EventEmitter
 } from '@angular/core';
 import { Tweet } from './../model/tweet';
@@ -30,7 +29,7 @@ export class TweetComponent {
   handleLike(): void {
     this.tweetUpdated.emit({
       id: this.tweet!.id,
-      likes: this.alreadyLiked ? --this.tweet!.likes : ++this.tweet!.likes
+      likes: this.alreadyLiked ? this.tweet!.likes - 1 : this.tweet!.likes + 1
     });
     this.alreadyLiked = !this.alreadyLiked;
   }

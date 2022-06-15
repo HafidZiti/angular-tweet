@@ -4,6 +4,8 @@
     <app-new-tweet (newTweetCreated)="handleNewTweet($event)"></app-new-tweet>
   </div>
   <div>
-    <app-tweet-list [tweets]="tweets"></app-tweet-list>
+    <div *ngIf="tweets$ | async as appState">
+      <app-tweet-list [tweets]="appState.tweets"></app-tweet-list>
+    </div>
   </div>
 </div>
