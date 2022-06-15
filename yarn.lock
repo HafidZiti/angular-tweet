@@ -1814,6 +1814,18 @@
   dependencies:
     "@types/node" "*"
 
+"@types/yargs-parser@*":
+  version "21.0.0"
+  resolved "https://registry.yarnpkg.com/@types/yargs-parser/-/yargs-parser-21.0.0.tgz#0c60e537fa790f5f9472ed2776c2b71ec117351b"
+  integrity sha512-iO9ZQHkZxHn4mSakYV0vFHAVDyEOIJQrV2uZ06HxEPcx+mt8swXoZHIbaaJ2crJYFfErySgktuTZ3BeLz+XmFA==
+
+"@types/yargs@^17.0.0":
+  version "17.0.10"
+  resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-17.0.10.tgz#591522fce85d8739bca7b8bb90d048e4478d186a"
+  integrity sha512-gmEaFwpj/7f/ROdtIlci1R1VYU1J4j95m8T+Tj3iBgiBFKg1foE/PSl93bBd5T9LDXNPo8UlNN6W0qwD8O5OaA==
+  dependencies:
+    "@types/yargs-parser" "*"
+
 "@typescript-eslint/eslint-plugin@5.26.0":
   version "5.26.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-5.26.0.tgz#c1f98ccba9d345e38992975d3ca56ed6260643c2"
@@ -1949,6 +1961,18 @@
     "@typescript-eslint/scope-manager" "5.17.0"
     "@typescript-eslint/types" "5.17.0"
     "@typescript-eslint/typescript-estree" "5.17.0"
+    eslint-scope "^5.1.1"
+    eslint-utils "^3.0.0"
+
+"@typescript-eslint/utils@5.25.0":
+  version "5.25.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/utils/-/utils-5.25.0.tgz#272751fd737733294b4ab95e16c7f2d4a75c2049"
+  integrity sha512-qNC9bhnz/n9Kba3yI6HQgQdBLuxDoMgdjzdhSInZh6NaDnFpTUlwNGxplUFWfY260Ya0TRPvkg9dd57qxrJI9g==
+  dependencies:
+    "@types/json-schema" "^7.0.9"
+    "@typescript-eslint/scope-manager" "5.25.0"
+    "@typescript-eslint/types" "5.25.0"
+    "@typescript-eslint/typescript-estree" "5.25.0"
     eslint-scope "^5.1.1"
     eslint-utils "^3.0.0"
 
@@ -4771,10 +4795,10 @@ karma-source-map-support@1.4.0:
   dependencies:
     source-map-support "^0.5.5"
 
-karma@~6.3.0:
-  version "6.3.20"
-  resolved "https://registry.yarnpkg.com/karma/-/karma-6.3.20.tgz#12f5c3b0e68f204607cb0a3a78d4751b42ef61a8"
-  integrity sha512-HRNQhMuKOwKpjYlWiJP0DUrJOh+QjaI/DTaD8b9rEm4Il3tJ8MijutVZH4ts10LuUFst/CedwTS6vieCN8yTSw==
+karma@~6.4.0:
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/karma/-/karma-6.4.0.tgz#82652dfecdd853ec227b74ed718a997028a99508"
+  integrity sha512-s8m7z0IF5g/bS5ONT7wsOavhW4i4aFkzD4u4wgzAQWT4HGUeWI3i21cK2Yz6jndMAeHETp5XuNsRoyGJZXVd4w==
   dependencies:
     "@colors/colors" "1.5.0"
     body-parser "^1.19.0"
