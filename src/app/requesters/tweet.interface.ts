@@ -1,4 +1,4 @@
-export interface Tweet {
+export interface ITweet {
   id: string;
   datetime: string;
   likes: number;

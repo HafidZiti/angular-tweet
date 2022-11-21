@@ -1,11 +1,1 @@
-<div class="container">
-  <h1>{{ title }}</h1>
-  <div>
-    <app-new-tweet (newTweetCreated)="handleNewTweet($event)"></app-new-tweet>
-  </div>
-  <div>
-    <div *ngIf="tweets$ | async as appState">
-      <app-tweet-list [tweets]="appState.tweets"></app-tweet-list>
-    </div>
-  </div>
-</div>
+<router-outlet></router-outlet>

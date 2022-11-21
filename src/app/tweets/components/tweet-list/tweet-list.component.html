@@ -1,8 +1,7 @@
 <div class="tweet-list-container">
   <app-tweet
-    *ngFor="let tweet of tweets; trackBy: trackByFn"
+    *ngFor="let tweet of tweetsList.tweets; trackBy: trackByFn"
     [tweet]="tweet"
-    (tweetUpdated)="handleTweetUpdated($event)"
   ></app-tweet>
   <button type="button" (click)="onLoadMore()">Load more</button>
 </div>

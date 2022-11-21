@@ -1,8 +1,7 @@
-import { Tweet } from './../model/tweet';
-
+import { TweetEntity } from './../tweets/components/tweet/tweet.entity';
 // These tweets are generated using https://json-generator.com/
 
-export const mockTweets: Tweet[] = [
+export const mockTweets: Array<TweetEntity> = [
   {
     id: '8efd46ab-5090-4feb-8889-8f1ae68df61b',
     datetime: '2021-08-18 04:33:14 -02:00',
